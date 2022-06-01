@@ -16,5 +16,5 @@ WORKDIR /app
 COPY --from=build-env /app/out .
 #ENV ASPNETCORE_URLS="http://+:${PORT}"
 
-ENTRYPOINT ["ASPNETCORE_URLS=http://*:$PORT", "dotnet", "rest.dll"]
-#CMD ASPNETCORE_URLS=http://*:$PORT dotnet HerokuApp.dll
+#ENTRYPOINT ["ASPNETCORE_URLS=http://*:$PORT", "dotnet", "rest.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet rest.dll
